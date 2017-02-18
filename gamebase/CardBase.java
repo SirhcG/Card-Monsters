@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunleashed;
+package gamebase;
 
 /**
  *
@@ -48,7 +48,7 @@ public class CardBase {
         return this.baseAttack;
     }
     
-   public void ability(TyrantPlayer one, TyrantPlayer two){
+   public void ability(Player one, Player two){
        // child classes will overload this.
    }
     

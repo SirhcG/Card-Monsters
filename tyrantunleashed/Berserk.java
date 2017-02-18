@@ -1,5 +1,7 @@
 package tyrantunleashed;
 
+import gamebase.CardBase;
+
 public class Berserk extends CardBase implements CardSkill{
 
 	int berserk;

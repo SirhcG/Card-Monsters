@@ -5,7 +5,7 @@
  */
 package cardmonsters;
 
-import cardmonsters.MonsterPlayer.StrategyType;
+import gamebase.Player.StrategyType;
 
 /**
  *

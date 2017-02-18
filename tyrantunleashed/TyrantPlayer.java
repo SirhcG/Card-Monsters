@@ -6,6 +6,8 @@
 package tyrantunleashed;
 
 import java.util.ArrayList;
+
+import gamebase.CardBase;
 import gamebase.Player;
 /**
  *
@@ -14,9 +16,7 @@ import gamebase.Player;
 public class TyrantPlayer extends Player{
     
     private int Health;
-    private int CardsInField = 0;
-    private int FieldPosition = 0;
-    private int Check = 0;
+
     
     public TyrantPlayer(String _name, int Health , int cardAmount, StrategyType s){ //why do you need to pass in cardAmmount? is this just the maximum field and handsize? 
     	super(_name);

@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package cardmonsters;
-import tyrantunleashed.*;
+//import tyrantunleashed.*;
+import gamebase.Strategy;
+import gamebase.Player;
 
 /**
  *
@@ -12,12 +14,12 @@ import tyrantunleashed.*;
  */
 public class DefensiveMonsterStrategy extends Strategy {
     
-    public DefensiveMonsterStrategy(MonsterPlayer _p){
+    public DefensiveMonsterStrategy(Player _p){
 		super(_p);
 	}
 
 	@Override
-	public Move nextMove() { //returns a move object with the handindex for the card to be played onto the field from the hand
+	public MonsterMove nextMove() { //returns a move object with the handindex for the card to be played onto the field from the hand
 		
 		int maxHp = 0;
 		int index = 0;
@@ -32,7 +34,7 @@ public class DefensiveMonsterStrategy extends Strategy {
 			}
 		}
 		
-		Move nextMove = new Move(index);
+		MonsterMove nextMove = new MonsterMove(index);
 		return nextMove;
 
 	}

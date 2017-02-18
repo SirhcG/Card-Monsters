@@ -5,6 +5,8 @@
  */
 package tyrantunleashed;
 
+import gamebase.CardBase;
+
 /**
  *
  * @author planb

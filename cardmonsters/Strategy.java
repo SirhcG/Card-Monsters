@@ -19,7 +19,7 @@ abstract class Strategy {
 		p = _p;
 	}
 	
-	public abstract Move nextMove();
+	public abstract TyrantMove nextMove();
 	
     
 }

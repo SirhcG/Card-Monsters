@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package cardmonsters;
+import gamebase.CardBase;
+import gamebase.Player;
 
 import java.util.ArrayList;
 
@@ -12,26 +14,11 @@ import tyrantunleashed.*;
  *
  * @author planb
  */
-public class MonsterPlayer {
-    
-    public enum StrategyType{
-		SIMPLE, DEFENSIVE
-	}
-
-    private String name;
-    private ArrayList<CardBase> Field;
-    private ArrayList<CardBase> Hand;
-    private int turnCounter = 0;
-    private int CardsInField = 0;
-    private int FieldPosition = 0;
-    private int Check = 0;
-    Strategy strategy;
+public class MonsterPlayer extends Player {
     
     public MonsterPlayer(String _name, StrategyType s){  
-    	
+    	super(_name);
     	name = _name;
-        Hand = new ArrayList<>();
-        Field = new ArrayList<>(3);
         
         if(s == StrategyType.SIMPLE)
         	strategy = new SimpleMonsterStrategy(this);
@@ -139,7 +126,7 @@ public class MonsterPlayer {
     	Hand.remove(i);
     }
     
-    public void doMove(Move move){ //takes in a move object and does that move
+    public void doMove(TyrantMove move){ //takes in a move object and does that move
     	playCard(move.handIndex);
     	
     	

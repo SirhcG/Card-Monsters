@@ -2,9 +2,7 @@ package gamebase;
 
 import java.util.ArrayList;
 
-import tyrantunleashed.CardBase;
-import tyrantunleashed.Move;
-import tyrantunleashed.Strategy;
+import tyrantunleashed.TyrantMove;
 
 public abstract class Player {
 
@@ -17,6 +15,9 @@ public abstract class Player {
     protected ArrayList<CardBase> Hand;
     protected Strategy strategy;
     protected int turnCounter = 0;
+    protected int CardsInField = 0;
+    protected int FieldPosition = 0;
+    protected int Check = 0;
     
     public Player(String _name){
     	name = _name;
@@ -81,7 +82,7 @@ public abstract class Player {
     	Hand.remove(i);
     }
     
-    public void doMove(Move move){ //takes in a move object and does that move
+    public void doMove(TyrantMove move){ //takes in a move object and does that move
     	playCard(move.handIndex);
     }
     

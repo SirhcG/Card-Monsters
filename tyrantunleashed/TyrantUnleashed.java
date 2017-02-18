@@ -7,6 +7,7 @@ package tyrantunleashed;
 
 import java.util.ArrayList;
 
+import gamebase.CardBase;
 import gamebase.Player.StrategyType;
 /**
  *

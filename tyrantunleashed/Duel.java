@@ -5,6 +5,7 @@
  */
 package tyrantunleashed;
 
+import gamebase.Move;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -49,7 +50,7 @@ public abstract class Duel {
 	        		input = sc.nextInt();
 	    		}
 	    		
-	    		move = new Move(input); //make the move
+	    		move = new TyrantMove(input); //make the move
 	    		mCommand = new doMoveCommand(player,move); //attempting to implement command pattern
 	    		mCommand.execute();
 	    		

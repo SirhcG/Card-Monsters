@@ -5,8 +5,9 @@
  */
 package cardmonsters;
 
-import cardmonsters.MonsterPlayer.StrategyType;
-import tyrantunleashed.*;
+import gamebase.Player;
+import gamebase.CardBase;
+//import tyrantunleashed.*;
 
 import java.util.ArrayList;
 /**

@@ -3,6 +3,8 @@ package tyrantunleashed;
 import java.util.ArrayList;
 import java.util.Random;
 
+import gamebase.CardBase;
+
 public class Weaken extends CardBase implements CardSkill{
 
 	int weaken;

@@ -1,5 +1,7 @@
 package tyrantunleashed;
 
+import gamebase.Strategy;
+
 public class SimpleTyrantStrategy extends Strategy{
 	
 	public SimpleTyrantStrategy(TyrantPlayer _p){
@@ -8,10 +10,10 @@ public class SimpleTyrantStrategy extends Strategy{
 	}
 	
 	@Override
-	public Move nextMove() { //returns a move object with the handindex for the card to be played onto the field from the hand
+	public TyrantMove nextMove() { //returns a move object with the handindex for the card to be played onto the field from the hand
 		
 		if(p.getHand().size()>0){
-			Move nextMove = new Move(0); //plays the first card in hand
+			TyrantMove nextMove = new TyrantMove(0); //plays the first card in hand
 			return nextMove;
 		}
 			

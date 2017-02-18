@@ -1,4 +1,4 @@
-package tyrantunlashed2;
+package tyrantunleashed;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,7 +18,7 @@ public class Weaken extends CardBase implements CardSkill{
     }
 	
 	@Override
-	public void ability(Player p, Player o) { //ability triggers before card attacks
+	public void ability(TyrantPlayer p, TyrantPlayer o) { //ability triggers before card attacks
 		ArrayList<CardBase> oppField = o.getField();
 		int fieldSize = o.getField().size();	//size of opponent's field
 		

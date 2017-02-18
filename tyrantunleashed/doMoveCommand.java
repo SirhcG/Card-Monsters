@@ -1,13 +1,13 @@
-package tyrantunlashed2;
+package tyrantunleashed;
 
 import java.io.IOException;
 
 public class doMoveCommand implements Command{
 
 	Move m;
-	Player p;
+	TyrantPlayer p;
 	
-	public doMoveCommand(Player _p, Move _m){
+	public doMoveCommand(TyrantPlayer _p, Move _m){
 		p = _p;
 		m = _m;
 	}

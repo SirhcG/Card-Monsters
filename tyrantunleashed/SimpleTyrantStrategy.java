@@ -1,8 +1,8 @@
-package tyrantunlashed2;
+package tyrantunleashed;
 
-public class SimpleStrategy extends Strategy{
+public class SimpleTyrantStrategy extends Strategy{
 	
-	public SimpleStrategy(Player _p){
+	public SimpleTyrantStrategy(TyrantPlayer _p){
 		super(_p);
 		
 	}

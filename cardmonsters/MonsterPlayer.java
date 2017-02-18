@@ -6,7 +6,8 @@
 package cardmonsters;
 
 import java.util.ArrayList;
-import tyrantunlashed2.*;
+
+import tyrantunleashed.*;
 /**
  *
  * @author planb
@@ -33,9 +34,9 @@ public class MonsterPlayer {
         Field = new ArrayList<>(3);
         
         if(s == StrategyType.SIMPLE)
-        	strategy = new SimpleStrategy(this);
+        	strategy = new SimpleMonsterStrategy(this);
         else if (s == StrategyType.DEFENSIVE)
-        	strategy = new DefensiveStrategy(this);
+        	strategy = new DefensiveMonsterStrategy(this);
         
     }
     

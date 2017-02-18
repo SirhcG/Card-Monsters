@@ -6,25 +6,31 @@
 package cardmonsters;
 
 import cardmonsters.MonsterPlayer.StrategyType;
+import tyrantunleashed.*;
+
 import java.util.ArrayList;
-import tyrantunlashed2.*;
 /**
  *
  * @author planb
  */
 public class CardMonsters {
     
-     public static void main(String[] args) {
+	AbstractFactory cardFactory;
+	AbstractFactory playerFactory;
+	MonsterPlayer first;
+	MonsterPlayer second;
+	
+     public CardMonsters() {
          
-         AbstractFactory cardFactory = FactoryProducer.getFactory("card");
-         AbstractFactory playerFactory = FactoryProducer.getFactory("player");
+         cardFactory = FactoryProducer.getFactory("card");
+         playerFactory = FactoryProducer.getFactory("player");
          
          Card one = cardFactory.getCard("melee");
          Card two = cardFactory.getCard("ranger");
          Card three = cardFactory.getCard("Heal");
          
-         MonsterPlayer first = playerFactory.getPlayer("user");
-         MonsterPlayer second = playerFactory.getPlayer("opponent");
+         first = playerFactory.getPlayer("user");
+         second = playerFactory.getPlayer("opponent");
          
          ArrayList<CardBase> val = new ArrayList<>();
          val.add((CardBase) one);
@@ -33,14 +39,7 @@ public class CardMonsters {
          
          first.setCards(val);
          System.out.println("Test");
-         System.out.println(first.getHand());
-         
-         
-         
-         
-         
-         
-         
+         System.out.println(first.getHand());  
          
          
      }

@@ -5,7 +5,7 @@
  */
 package cardmonsters;
 
-import tyrantunlashed2.*;
+import tyrantunleashed.*;
 
 /**
  *

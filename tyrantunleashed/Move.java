@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunlashed2;
+package tyrantunleashed;
 
 import java.io.IOException;
 
@@ -25,7 +25,7 @@ public class Move{
 		return String.valueOf(handIndex);
 	}
 
-	public void go(Player p) {
+	public void go(TyrantPlayer p) {
 		
 		String name = p.getHand().get(handIndex).getName();
 		p.playCard(handIndex);

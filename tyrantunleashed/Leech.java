@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunlashed2;
+package tyrantunleashed;
 
 /**
  *
@@ -24,7 +24,7 @@ public class Leech extends CardBase implements CardSkill{
     }
 	
 	@Override
-	public void ability(Player p, Player o) { //ability triggers before card attacks
+	public void ability(TyrantPlayer p, TyrantPlayer o) { //ability triggers before card attacks
 		int temp = getHealth();
 		
 		if(leech > getAttack())

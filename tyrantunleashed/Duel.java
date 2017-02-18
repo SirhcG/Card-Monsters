@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunlashed2;
+package tyrantunleashed;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,12 +15,12 @@ import java.util.Scanner;
  */
 public abstract class Duel {
 
-	private ArrayList<Player> players;
+	private ArrayList<TyrantPlayer> players;
 	Move move;
 	doMoveCommand mCommand;
 	int dmg = 0, health = 0, val = 0, turn = 1;
     
-    public Duel(Player one, Player two){
+    public Duel(TyrantPlayer one, TyrantPlayer two){
     	
     	players = new ArrayList<>();
     	players.add(one);
@@ -31,8 +31,8 @@ public abstract class Duel {
     	
     	Scanner sc = new Scanner(System.in);
     	int input = 0;
-    	Player player = players.get(0);
-    	Player opp = players.get(1);
+    	TyrantPlayer player = players.get(0);
+    	TyrantPlayer opp = players.get(1);
     	
     	while(!gameOver()){
     		player.showInfo();
@@ -69,7 +69,7 @@ public abstract class Duel {
     		System.out.println("\nOpponent's turn starts!\n");
     		stop();
     		
-    		move = opp.strategy.nextMove();
+    		move = opp.getStrategy().nextMove();
     		if (move != null){
     			
     			mCommand = new doMoveCommand(opp,move);
@@ -91,8 +91,8 @@ public abstract class Duel {
     		return;
     	
 	   //if its the players turn
-		Player one = players.get(0);
-		Player two = players.get(1);
+		TyrantPlayer one = players.get(0);
+		TyrantPlayer two = players.get(1);
 
 		//if its the opponents turn
 		if(turnPlayer == 2){

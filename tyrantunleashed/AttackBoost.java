@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunlashed2;
+package tyrantunleashed;
 
 /**
  *
@@ -16,7 +16,7 @@ public class AttackBoost extends CardBase implements CardSkill{
     }
     
     @Override
-    public void ability(Player p, Player o){
+    public void ability(TyrantPlayer p, TyrantPlayer o){
        this.setDamage(0);
        int temp = this.getAttack();
        temp = temp + 15;

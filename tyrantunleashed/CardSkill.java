@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunlashed2;
+package tyrantunleashed;
 
 /**
  *
@@ -12,6 +12,6 @@ package tyrantunlashed2;
 public interface CardSkill {
     
     public void checkSkill();
-    public void ability(Player p, Player o);
+    public void ability(TyrantPlayer p, TyrantPlayer o);
     
 }

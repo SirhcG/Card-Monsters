@@ -1,8 +1,8 @@
-package tyrantunlashed2;
+package tyrantunleashed;
 
-public class DefensiveStrategy extends Strategy {
+public class DefensiveTyrantStrategy extends Strategy {
 
-	public DefensiveStrategy(Player _p){
+	public DefensiveTyrantStrategy(TyrantPlayer _p){
 		super(_p);
 	}
 

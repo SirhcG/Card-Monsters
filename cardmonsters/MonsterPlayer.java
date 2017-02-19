@@ -38,6 +38,7 @@ public class MonsterPlayer extends Player {
     }
     
     
+    
     public int getTurn(){
         return this.turnCounter;
     }

@@ -28,18 +28,22 @@ public class Reach extends CardBase implements CardSkill, Card {
             int health = o.getCard(0).getHealth();
             health = health - attack;
             o.getCard(0).setHealth(health);
+            checkSkill();
        }
         
         else if(val == 2){
             int health = o.getCard(1).getHealth();
             health = health - attack;
             o.getCard(1).setHealth(health);
+            checkSkill();
         }
         else if(val == 3){
             int health = o.getCard(2).getHealth();
             health = health - attack;
             o.getCard(2).setHealth(health);
+            checkSkill();
         }
+        
         }
 
     @Override

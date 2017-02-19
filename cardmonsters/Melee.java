@@ -6,7 +6,7 @@
 package cardmonsters;
 
 import gamebase.CardBase;
-import tyrantunleashed.*;
+
 
 /**
  *

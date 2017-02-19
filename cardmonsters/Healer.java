@@ -29,6 +29,7 @@ public class Healer extends CardBase implements CardSkill, Card  {
            p.getCard(0).setHealth(health);
         }
         
+        checkSkill();
     }
 
     @Override

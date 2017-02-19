@@ -1,6 +1,9 @@
-package tyrantunlashed2;
+package tyrantunleashed;
 
 import java.io.IOException;
+
+import gamebase.Move;
+import gamebase.Player; 
 
 public class doMoveCommand implements Command{
 

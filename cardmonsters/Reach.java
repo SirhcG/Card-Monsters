@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package cardmonsters;
-import tyrantunlashed2.*;
+import gamebase.CardBase;
+import tyrantunleashed.*;
 /**
  *
  * @author planb

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunlashed2;
+package tyrantunleashed;
 
 /**
  *
@@ -11,7 +11,7 @@ package tyrantunlashed2;
  */
 public class Battle extends Duel {
     
-    public Battle(Player one, Player two) {
+    public Battle(TyrantPlayer one, TyrantPlayer two) {
         super(one, two);
     }
     

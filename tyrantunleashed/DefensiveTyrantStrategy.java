@@ -1,13 +1,15 @@
-package tyrantunlashed2;
+package tyrantunleashed;
 
-public class DefensiveStrategy extends Strategy {
+import gamebase.Strategy;
 
-	public DefensiveStrategy(Player _p){
+public class DefensiveTyrantStrategy extends Strategy {
+
+	public DefensiveTyrantStrategy(TyrantPlayer _p){
 		super(_p);
 	}
 
 	@Override
-	public Move nextMove() { //returns a move object with the handindex for the card to be played onto the field from the hand
+	public TyrantMove nextMove() { //returns a move object with the handindex for the card to be played onto the field from the hand
 		
 		int maxHp = 0;
 		int index = 0;
@@ -22,7 +24,7 @@ public class DefensiveStrategy extends Strategy {
 			}
 		}
 		
-		Move nextMove = new Move(index);
+		TyrantMove nextMove = new TyrantMove(index);
 		return nextMove;
 
 	}

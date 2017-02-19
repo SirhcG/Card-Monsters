@@ -6,7 +6,9 @@
 package cardmonsters;
 
 import java.util.Scanner;
-import tyrantunlashed2.*;
+
+import gamebase.CardBase;
+import tyrantunleashed.*;
 
 /**
  *

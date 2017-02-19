@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunlashed2;
+package tyrantunleashed;
+
+import gamebase.CardBase;
 
 /**
  *
@@ -19,7 +21,7 @@ public class ArmorBoost extends CardBase implements CardSkill {
     }
     
      @Override
-    public void ability(Player p, Player o) {
+    public void ability(TyrantPlayer p, TyrantPlayer o) {
         int temp = this.getHealth();
         temp = temp + 15;
         this.setHealth(temp);

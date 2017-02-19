@@ -5,7 +5,8 @@
  */
 package cardmonsters;
 
-import tyrantunlashed2.*;
+import gamebase.CardBase;
+import tyrantunleashed.*;
 
 /**
  *

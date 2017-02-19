@@ -1,4 +1,4 @@
-package tyrantunlashed2;
+package tyrantunleashed;
 
 public interface Command {
 	

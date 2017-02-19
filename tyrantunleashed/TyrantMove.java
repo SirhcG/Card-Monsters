@@ -3,28 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunlashed2;
+package tyrantunleashed;
 
 import java.io.IOException;
+import gamebase.Move;
+import gamebase.Player;
 
 /**
  *
  * @author planb
  */
-public class Move{
+public class TyrantMove extends Move{
     
 	public int handIndex;
 
 	
-	public Move(int _handIndex){
-		handIndex = _handIndex;
+	public TyrantMove(int _handIndex){
+		super(_handIndex);
 	}
 	
-	@Override
-	public String toString(){
-		return String.valueOf(handIndex);
-	}
 
+	@Override
 	public void go(Player p) {
 		
 		String name = p.getHand().get(handIndex).getName();

@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunlashed2;
+package tyrantunleashed;
+
+import gamebase.CardBase;
 
 /**
  *
@@ -20,9 +22,9 @@ public class StrikeBoost extends CardBase implements CardSkill {
     }
     
      @Override
-    public void ability(Player p, Player o) {
-        Player one = p;
-        Player two = o;
+    public void ability(TyrantPlayer p, TyrantPlayer o) {
+        TyrantPlayer one = p;
+        TyrantPlayer two = o;
         
         int val = o.getCardInField();
         if(val == 0){

@@ -15,6 +15,8 @@ import java.io.Serializable;
  */
 public class Melee extends CardBase implements CardSkill, Card, Serializable {
     
+    private static final long serialVersionUID = -751192004804111646L;
+    
     
     public Melee(String name, int Attack, int Health){
         super(name, Attack, Health);

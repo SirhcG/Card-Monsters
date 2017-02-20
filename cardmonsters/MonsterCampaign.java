@@ -10,9 +10,12 @@ import gamebase.Player;
 import gamebase.Player.StrategyType;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,8 +23,9 @@ import java.util.Scanner;
  *
  * @author planb
  */
-public abstract class MonsterCampaign {
+public abstract class MonsterCampaign implements Serializable {
    
+    private static final long serialVersionUID = -1789160225751330715L;
     private ArrayList<MonsterPlayer> opponents;
     private ArrayList<MonsterPlayer> clones;
     MonsterMove move;
@@ -42,7 +46,22 @@ public abstract class MonsterCampaign {
         
         Scanner val = new Scanner(System.in);
         int input = 0;
-        System.out.println("Welcome to the card monster campaign!!");
+        
+                while(true){
+                System.out.println("Do you have a perviously saved game?? [Y/N] \n");
+                Scanner choice = new Scanner(System.in);
+                char s = choice.findInLine(".").charAt(0);
+                if(s == 'Y'  || s == 'y'){
+                    read();
+                    break;
+                }else if(s == 'N' || s == 'n'){
+                    break;
+                }else
+                    System.out.println("Invalid Entry");
+                }
+        
+    
+        System.out.println("Welcome to the card monster campaign!!");        
         System.out.println("Opponents remaining: " + opponents.size());
         MonsterPlayer boss = opponents.get(0);
         MonsterPlayer clone = clones.get(0);
@@ -162,14 +181,53 @@ public abstract class MonsterCampaign {
                        System.exit(0);
                    }else
                    update();
+                   save();
+                  // stop();
+                   begin();
                    
-                  // save();
            }
    }
    
    private void save(){
+       while(true){
        System.out.println("Would you like to save?? [Y/N] ");
+       Scanner choice = new Scanner(System.in);
+       char s = choice.findInLine(".").charAt(0);
+       if(s == 'Y'  || s == 'y'){
+       try{
+       FileOutputStream out = new FileOutputStream("Campaign.txt");
+       ObjectOutputStream oos = new ObjectOutputStream(out);
+       oos.writeObject(MonsterCampaign.this);
+       oos.close();
+       System.exit(0);
+       }catch(Exception e){
+           System.out.println(e);
+       }
+       }
+       else if(s == 'N' || s == 'n'){
+           break;
+       }
+       else
+           System.out.println("Invalid Entry");
+       }
     }
+   
+   private void read(){
+       try{
+       FileInputStream fis = new FileInputStream("Campaign.txt");
+       ObjectInputStream ois = new ObjectInputStream(fis);
+       MonsterCampaign resume = (MonsterCampaign) ois.readObject();
+       ois.close();
+       opponents = resume.opponents;
+       clones = resume.clones;
+       oppCount = resume.oppCount;
+       }catch(Exception e){
+           System.out.println(e);
+           System.out.println("\nYou do not have a perviously saved game please restart the game!!");
+           System.exit(0);
+           
+       }
+   }
    
    private void update(){
       
@@ -177,7 +235,8 @@ public abstract class MonsterCampaign {
        clones.trimToSize();
        opponents.remove(0);
        opponents.trimToSize();
-       begin();
+       
+       
                
    }
 
@@ -201,6 +260,8 @@ public abstract class MonsterCampaign {
 	   turn++;
 	   
    }
+   
+  
    
    public static MonsterPlayer deepClone(MonsterPlayer object) 
    {

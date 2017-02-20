@@ -5,11 +5,13 @@
  */
 package gamebase;
 
+import java.io.Serializable;
+
 /**
  *
  * @author planb
  */
-public class CardBase {
+public class CardBase implements Serializable {
     
 	private String name;
     private int baseAttack;

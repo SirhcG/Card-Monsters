@@ -1,10 +1,11 @@
 package gamebase;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import tyrantunleashed.TyrantMove;
 
-public abstract class Player {
+public abstract class Player implements Serializable{
 
 	public enum StrategyType{
 		SIMPLE, DEFENSIVE
@@ -25,6 +26,8 @@ public abstract class Player {
     	Hand = new ArrayList<>();
         Field = new ArrayList<>();
     }
+    
+   
     
     public Strategy getStrategy(){
     	return strategy;
@@ -84,6 +87,12 @@ public abstract class Player {
     
     public void doMove(TyrantMove move){ //takes in a move object and does that move
     	playCard(move.handIndex);
+    }
+    
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        Player player = (Player)super.clone();
+        return player;
     }
     
     public abstract void showInfo(); //abstract method

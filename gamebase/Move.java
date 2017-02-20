@@ -9,6 +9,10 @@ public abstract class Move {
 	public Move(int _handIndex){
 		handIndex = _handIndex;
 	}
+        
+        public Move(){
+            
+        }
 
 	@Override
 	public String toString(){

@@ -11,8 +11,9 @@ public abstract class Player implements Serializable{
 		SIMPLE, DEFENSIVE
 	}
 	
-	protected String name;
-	protected ArrayList<CardBase> Field;
+    private static final long serialVersionUID = 8556643724063788996L;
+    protected String name;
+    protected ArrayList<CardBase> Field;
     protected ArrayList<CardBase> Hand;
     protected Strategy strategy;
     protected int turnCounter = 0;

@@ -6,7 +6,13 @@
 package cardmonsters;
 
 import gamebase.Move;
+import gamebase.Player;
+import gamebase.Player.StrategyType;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,35 +21,35 @@ import java.util.Scanner;
  * @author planb
  */
 public abstract class MonsterCampaign {
-    
-    
+   
     private ArrayList<MonsterPlayer> opponents;
     private ArrayList<MonsterPlayer> clones;
     MonsterMove move;
     MonsterdoMoveCommand mCommand;
-    int dmg = 0, health = 0, val = 0, turn = 1, oppCount = 1;
+    int dmg = 0, health = 0, val = 0, turn = 1, oppCount = 1, size = 0, count = 0;
     
     public MonsterCampaign(MonsterPlayer main, ArrayList<MonsterPlayer> array){
         opponents = new ArrayList<>();
         opponents = array;
+        size = opponents.size();
         clones = new ArrayList<>();
-        for(int i=0;i<opponents.size();i++){
-            clones.add(main);
+        for(int i=0; i<opponents.size(); i++){
+          clones.add(deepClone(main));
         }
-      }
+        }
     
     public void begin(){
         
         Scanner val = new Scanner(System.in);
         int input = 0;
+        System.out.println("Welcome to the card monster campaign!!");
+        System.out.println("Opponents remaining: " + opponents.size());
         MonsterPlayer boss = opponents.get(0);
         MonsterPlayer clone = clones.get(0);
-        System.out.println("Welcome to the card monster campaign!!");
         
         
         while(true){
             
-            System.out.println("Opponents remaining: " + opponents.size());
             clone.showInfo();
             boss.showInfo();
             
@@ -70,11 +76,10 @@ public abstract class MonsterCampaign {
                 clone.showInfo();
     		boss.showInfo();
     		
-                
-    		battle(1); //conducts battle for player 1
                 check();
+    		battle(1); //conducts battle for player 1
     		stop(); //waits for user button press to continue
-    		
+    		check();
     		System.out.println("\nOpponent's turn starts!\n");
     		stop();
     		
@@ -89,8 +94,9 @@ public abstract class MonsterCampaign {
     		
     		 //conducts battle for player 2
                 
+                check();
     		battle(2);
-    		check();
+                check();
     		endOfTurn(); //end of turn stuff
     	}
     }
@@ -111,7 +117,7 @@ public abstract class MonsterCampaign {
 			two = clones.get(0);
 		}
 	   
-		one.showInfo();
+		//one.showInfo();
 		
 		
 		
@@ -147,21 +153,32 @@ public abstract class MonsterCampaign {
 	   }   
 	   else if(opponents.get(0).getCardInField() == 0 && turn > 2){
 		   System.out.println("PLAYER BEAT OPPONENT " + oppCount);
-                   turn = 1;
                    oppCount++;
-                   opponents.remove(0);
-                   opponents.trimToSize();
-                   clones.remove(0);
-                   clones.trimToSize();
+                   ++count;
+                   turn = 1;
+                   //begin();
+                   if(size == count){
+                       System.out.println("Out of Opponents Game Over!!\n");
+                       System.exit(0);
+                   }else
+                   update();
                    
-                   save();
+                  // save();
            }
    }
    
    private void save(){
        System.out.println("Would you like to save?? [Y/N] ");
+    }
+   
+   private void update(){
+      
+       clones.remove(0);
+       clones.trimToSize();
+       opponents.remove(0);
+       opponents.trimToSize();
        begin();
-       
+               
    }
 
    private void stop(){
@@ -184,6 +201,23 @@ public abstract class MonsterCampaign {
 	   turn++;
 	   
    }
+   
+   public static MonsterPlayer deepClone(MonsterPlayer object) 
+   {
+   
+       try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(baos);
+            oos.writeObject(object);
+            ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+            ObjectInputStream ois = new ObjectInputStream(bais);
+            
+            return (MonsterPlayer) ois.readObject();
+            }catch (Exception e) {
+                    e.printStackTrace();
+                    return null;
+            }
+    }
 }
 
             

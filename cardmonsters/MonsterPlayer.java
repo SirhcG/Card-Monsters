@@ -6,6 +6,7 @@
 package cardmonsters;
 import gamebase.CardBase;
 import gamebase.Player;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ import tyrantunleashed.*;
  *
  * @author planb
  */
-public class MonsterPlayer extends Player {
+public class MonsterPlayer extends Player implements Serializable {
     
     public MonsterPlayer(String _name, StrategyType s){  
     	super(_name);
@@ -26,6 +27,8 @@ public class MonsterPlayer extends Player {
         	strategy = new DefensiveMonsterStrategy(this);
         
     }
+    
+    
     
    
     
@@ -101,6 +104,7 @@ public class MonsterPlayer extends Player {
        return Hand.get(index);
    }
    
+   
   
    
    public void remove(int index){ 
@@ -127,7 +131,7 @@ public class MonsterPlayer extends Player {
     	Hand.remove(i);
     }
     
-    public void doMove(TyrantMove move){ //takes in a move object and does that move
+    public void doMove(MonsterMove move){ //takes in a move object and does that move
     	playCard(move.handIndex);
     	
     	

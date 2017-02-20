@@ -18,6 +18,7 @@ public class CardMonsters {
     
 	AbstractFactory cardFactory;
 	AbstractFactory playerFactory;
+        MonsterPlayer copy;
 	MonsterPlayer first;
 	MonsterPlayer second;
         MonsterPlayer third;
@@ -48,6 +49,8 @@ public class CardMonsters {
          ArrayList<MonsterPlayer> opp = new ArrayList<>();
          opp.add(second);
          opp.add(third);
+         
+        
          
          ArrayList<CardBase> val = new ArrayList<>();
          val.add((CardBase) one);

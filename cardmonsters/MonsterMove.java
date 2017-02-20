@@ -4,17 +4,21 @@ import java.io.IOException;
 import gamebase.Move;
 import cardmonsters.MonsterPlayer;
 import gamebase.Player;
+import java.io.Serializable;
 
 /**
  *
  * @author planb
  */
-public class MonsterMove extends Move{
+public class MonsterMove extends Move implements Serializable{
+    
+        private static final long serialVersionUID = 905385761837857889L;
     
 	
 	public MonsterMove(int _handIndex){
 		super(_handIndex);
 	}
+       
 
 	@Override
 	public void Monstergo(MonsterPlayer p) {

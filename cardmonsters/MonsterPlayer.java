@@ -17,6 +17,8 @@ import tyrantunleashed.*;
  */
 public class MonsterPlayer extends Player implements Serializable {
     
+    private static final long serialVersionUID = 6831716097066398573L;
+    
     public MonsterPlayer(String _name, StrategyType s){  
     	super(_name);
     	name = _name;

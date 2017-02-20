@@ -5,18 +5,23 @@
  */
 package cardmonsters;
 import gamebase.CardBase;
+import java.io.Serializable;
 import tyrantunleashed.*;
 /**
  *
  * @author planb
  */
-public class Reach extends CardBase implements CardSkill, Card {
+public class Reach extends CardBase implements CardSkill, Card, Serializable {
     
     private int attack;
     
     public Reach(String name, int attack, int health){
         super(name, attack, health);
         this.attack = attack;
+    }
+    
+    public Reach(){
+        super(null, 0, 0);
     }
     
     @Override

@@ -15,6 +15,8 @@ import java.io.Serializable;
  */
 public class SimpleMonsterStrategy extends Strategy implements Serializable {
     
+    private static final long serialVersionUID = 5650428219175090991L;
+    
     public SimpleMonsterStrategy(MonsterPlayer _p){
 		super(_p);
 		

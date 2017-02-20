@@ -6,19 +6,24 @@
 package cardmonsters;
 
 import gamebase.CardBase;
+import java.io.Serializable;
 import tyrantunleashed.*;
 
 /**
  *
  * @author planb
  */
-public class Ranger extends CardBase implements CardSkill, Card {
+public class Ranger extends CardBase implements CardSkill, Card, Serializable {
     
     private int Attack;
     
     public Ranger(String name, int Attack, int Health){
         super(name, Attack, Health);
         this.Attack = Attack;
+    }
+    
+    public Ranger(){
+        super(null, 0, 0);
     }
     
     @Override

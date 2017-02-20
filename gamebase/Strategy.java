@@ -1,9 +1,10 @@
 package gamebase;
 
+import java.io.Serializable;
 import tyrantunleashed.TyrantMove;
 import tyrantunleashed.TyrantPlayer;
 
-public abstract class Strategy { 
+public abstract class Strategy implements Serializable { 
 
 	protected Player p, o;
 	

@@ -4,7 +4,7 @@ import cardmonsters.MonsterPlayer;
 
 public abstract class Move {
 
-	protected int handIndex;
+	public int handIndex;
 	
 	public Move(int _handIndex){
 		handIndex = _handIndex;

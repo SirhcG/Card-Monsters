@@ -7,12 +7,13 @@ package cardmonsters;
 //import tyrantunleashed.*;
 import gamebase.Strategy;
 import gamebase.Player;
+import java.io.Serializable;
 
 /**
  *
  * @author planb
  */
-public class SimpleMonsterStrategy extends Strategy {
+public class SimpleMonsterStrategy extends Strategy implements Serializable {
     
     public SimpleMonsterStrategy(MonsterPlayer _p){
 		super(_p);

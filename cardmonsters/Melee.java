@@ -6,17 +6,22 @@
 package cardmonsters;
 
 import gamebase.CardBase;
+import java.io.Serializable;
 
 
 /**
  *
  * @author planb
  */
-public class Melee extends CardBase implements CardSkill, Card {
+public class Melee extends CardBase implements CardSkill, Card, Serializable {
     
     
     public Melee(String name, int Attack, int Health){
         super(name, Attack, Health);
+    }
+    
+    public Melee(){
+        super(null, 0, 0);
     }
 
     @Override

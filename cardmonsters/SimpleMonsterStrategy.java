@@ -14,7 +14,7 @@ import gamebase.Player;
  */
 public class SimpleMonsterStrategy extends Strategy {
     
-    public SimpleMonsterStrategy(Player _p){
+    public SimpleMonsterStrategy(MonsterPlayer _p){
 		super(_p);
 		
 	}

@@ -16,4 +16,5 @@ public abstract class Move {
 	}
 	
 	public abstract void go(Player p);
+        public abstract void Monstergo(MonsterPlayer p);
 }

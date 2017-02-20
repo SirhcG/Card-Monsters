@@ -19,7 +19,7 @@ public class CardFactory extends AbstractFactory {
         }
         
         if(cardType.equalsIgnoreCase("Melee")){
-            return new Melee("Melee", 10, 50);
+            return new Melee("Melee", 20, 50);
         }
         
         if(cardType.equalsIgnoreCase("Ranger")){

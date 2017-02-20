@@ -5,6 +5,7 @@
  */
 package tyrantunleashed;
 
+import cardmonsters.MonsterPlayer;
 import java.io.IOException;
 import gamebase.Move;
 import gamebase.Player;
@@ -40,5 +41,10 @@ public class TyrantMove extends Move{
 		p.setTurn();
 		
 	}
+
+    @Override
+    public void Monstergo(MonsterPlayer p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

@@ -27,19 +27,25 @@ public class Ranger extends CardBase implements CardSkill, Card {
        int val = o.getCardInField();
        
         if(val == 1){
+           this.Attack = 0;
            System.out.println("Cannot attack first position");
+           checkSkill();
        }
         
         else if(val == 2){
+            this.Attack = 10;
             int health = o.getCard(1).getHealth();
             health = health - Attack;
             o.getCard(1).setHealth(health);
+            checkSkill();
         }
         else if(val == 3){
             int health = o.getCard(2).getHealth();
             health = health - Attack;
             o.getCard(2).setHealth(health);
+            checkSkill();
         }
+        
         }
     
     

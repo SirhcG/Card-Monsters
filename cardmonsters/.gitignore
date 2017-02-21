@@ -19,3 +19,10 @@
 /DefensiveMonsterStrategy.class
 /SimpleMonsterStrategy.class
 /MonsterMove.class
+/CampaignBattle.class
+/MonsterBattle.class
+/MonsterCampaign.class
+/MonsterCommand.class
+/MonsterDuel.class
+/MonsterStrategy.class
+/MonsterdoMoveCommand.class

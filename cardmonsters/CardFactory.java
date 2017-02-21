@@ -5,6 +5,8 @@
  */
 package cardmonsters;
 
+import gamebase.CardBase;
+
 /**
  *
  * @author planb
@@ -12,7 +14,7 @@ package cardmonsters;
 public class CardFactory extends AbstractFactory {
 
     @Override
-    Card getCard(String cardType) {
+    CardBase getCard(String cardType) {
         
         if(cardType == null){
             return null;

@@ -62,5 +62,9 @@ public class CardBase implements Serializable {
     public String getName(){
     	return name;
     }
+    
+    public void checkName() {
+        System.out.println(name);
+    }
    
 }

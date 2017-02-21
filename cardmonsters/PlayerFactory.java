@@ -5,6 +5,7 @@
  */
 package cardmonsters;
 
+import gamebase.CardBase;
 import gamebase.Player.StrategyType;
 
 /**
@@ -31,7 +32,7 @@ public class PlayerFactory extends AbstractFactory{
     }
     
      @Override
-    Card getCard(String Card) {
+    CardBase getCard(String Card) {
         return null;
     }
     

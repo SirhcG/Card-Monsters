@@ -11,7 +11,7 @@ import tyrantunleashed.*;
  *
  * @author planb
  */
-public class Reach extends CardBase implements CardSkill, Card, Serializable {
+public class Reach extends CardBase implements CardSkill, Serializable {
     
     private int attack;
     
@@ -56,11 +56,4 @@ public class Reach extends CardBase implements CardSkill, Card, Serializable {
         System.out.println("Can attack any card regardless of position");
     }
 
-    @Override
-    public void checkName() {
-        System.out.println(super.getName());
-    }
-    
-    
-    
 }

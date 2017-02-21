@@ -30,17 +30,17 @@ public class CardMonsters {
          playerFactory = FactoryProducer.getFactory("player");
          
          
-         Card one = cardFactory.getCard("melee");
-         Card two = cardFactory.getCard("melee");
-         Card three = cardFactory.getCard("melee");
+         CardBase one = cardFactory.getCard("melee");
+         CardBase two = cardFactory.getCard("melee");
+         CardBase three = cardFactory.getCard("melee");
          
-         Card four = cardFactory.getCard("melee");
-         Card five = cardFactory.getCard("melee");
-         Card six = cardFactory.getCard("melee");
+         CardBase four = cardFactory.getCard("melee");
+         CardBase five = cardFactory.getCard("melee");
+         CardBase six = cardFactory.getCard("melee");
          
-         Card seven = cardFactory.getCard("melee");
-         Card eight = cardFactory.getCard("melee");
-         Card nine = cardFactory.getCard("melee");
+         CardBase seven = cardFactory.getCard("melee");
+         CardBase eight = cardFactory.getCard("melee");
+         CardBase nine = cardFactory.getCard("melee");
          
          first = playerFactory.getPlayer("user");
          second = playerFactory.getPlayer("opponent");

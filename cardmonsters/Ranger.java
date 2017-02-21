@@ -13,7 +13,7 @@ import tyrantunleashed.*;
  *
  * @author planb
  */
-public class Ranger extends CardBase implements CardSkill, Card, Serializable {
+public class Ranger extends CardBase implements CardSkill, Serializable {
     
     private int Attack;
     
@@ -57,11 +57,6 @@ public class Ranger extends CardBase implements CardSkill, Card, Serializable {
     @Override
     public void checkSkill() {
         System.out.println("Card can only attack field spots 2 and 3");
-    }
-
-    @Override
-    public void checkName() {
-        System.out.println(super.getName());
     }
     
 }

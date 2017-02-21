@@ -11,7 +11,7 @@ import tyrantunleashed.*;
  *
  * @author planb
  */
-public class Healer extends CardBase implements CardSkill, Card  {
+public class Healer extends CardBase implements CardSkill {
     
     private int Heal;
     
@@ -36,12 +36,5 @@ public class Healer extends CardBase implements CardSkill, Card  {
     public void checkSkill() {
         System.out.println("This card will heal any monster in the main field");
     }
-
-    @Override
-    public void checkName() {
-        System.out.println(super.getName());
-    }
-    
-    
     
 }

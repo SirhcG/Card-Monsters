@@ -5,13 +5,15 @@
  */
 package cardmonsters;
 
+import gamebase.CardBase;
+
 /**
  *
  * @author planb
  */
 public abstract class AbstractFactory {
     
-    abstract Card getCard(String Card);
+    abstract CardBase getCard(String Card);
     abstract MonsterPlayer getPlayer(String Player);
     
 }

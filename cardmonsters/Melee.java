@@ -13,7 +13,7 @@ import java.io.Serializable;
  *
  * @author planb
  */
-public class Melee extends CardBase implements CardSkill, Card, Serializable {
+public class Melee extends CardBase implements CardSkill, Serializable {
     
     private static final long serialVersionUID = -751192004804111646L;
     
@@ -29,11 +29,6 @@ public class Melee extends CardBase implements CardSkill, Card, Serializable {
     @Override
     public void checkSkill() {
         System.out.println("This card has no special skill");
-    }
-
-    @Override
-    public void checkName() {
-        System.out.println(super.getName());
     }
 
     @Override

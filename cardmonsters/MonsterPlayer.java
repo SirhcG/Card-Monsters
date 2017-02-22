@@ -15,6 +15,8 @@ import tyrantunleashed.*;
  *
  * @author planb
  */
+
+//handles the player logic for cardmonsters
 public class MonsterPlayer extends Player implements Serializable {
     
     private static final long serialVersionUID = 6831716097066398573L;
@@ -23,6 +25,7 @@ public class MonsterPlayer extends Player implements Serializable {
     	super(_name);
     	name = _name;
         
+    	//pick strategy for computer
         if(s == StrategyType.SIMPLE)
         	strategy = new SimpleMonsterStrategy(this);
         else if (s == StrategyType.DEFENSIVE)
@@ -33,34 +36,34 @@ public class MonsterPlayer extends Player implements Serializable {
     
     
    
-    
+    //attach array of cards to the hand
     public void setCards(ArrayList<CardBase> a){ 
         this.Hand = a;
     }
     
+    //attach array of cards to the field
     public void setField(ArrayList<CardBase> b){
         this.Field = b;
     }
     
     
-    
+    //getter for turn
     public int getTurn(){
         return this.turnCounter;
     }
     
+    //setter for turn
     public void setTurn(){
         this.turnCounter++;
     }
     
+    //increase card counter
     public void setCardInField(){
         this.CardsInField++;
     }
     
-    public int getCardInField(){
-        
-    	return Field.size();
-    }
-    
+
+    //removes a card from the field in first position
     public void removeCard(){
        int temp = this.CardsInField--;
        if(temp < 0){
@@ -68,12 +71,14 @@ public class MonsterPlayer extends Player implements Serializable {
        }
     }
     
+    /* UNUSED METHODS
     public void setCheck(){
         this.Check++;
     }
     public int Check(){
         return Check;
     }
+    
     
     public void setPosition(){
         this.FieldPosition++;
@@ -89,14 +94,14 @@ public class MonsterPlayer extends Player implements Serializable {
             this.FieldPosition = 0;
         }
     }
-    
+
     public void setCard(){
         
        CardBase temp = getHandCard(0); 
        Field.set(FieldPosition, temp); 
        Hand.remove(0);
        Hand.trimToSize(); 
-    }
+    }*/
     
    public CardBase getCard(int index){ 
        return Field.get(index);
@@ -108,16 +113,18 @@ public class MonsterPlayer extends Player implements Serializable {
    
    
   
-   
+   //remove card from field from specific index
    public void remove(int index){ 
        Field.remove(index);
    }
    
+   //remove card from hand from specific index
    public void removeHand(int index){ 
         Hand.remove(index);
         
    }
     
+  
     public ArrayList<CardBase> getField(){
     	return Field;
     }

@@ -1,6 +1,8 @@
 package tyrantunleashed;
 
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
 
 public class Berserk extends CardBase implements CardSkill{
 
@@ -17,7 +19,7 @@ public class Berserk extends CardBase implements CardSkill{
     }
 	
 	@Override
-	public void ability(TyrantPlayer p, TyrantPlayer o) { //ability triggers before card attacks
+	public void ability(Player p, Player o) { //ability triggers before card attacks
 		setAttack(getAttack()+berserk);
 		
 		checkSkill();

@@ -11,6 +11,8 @@ import gamebase.CardBase;
  *
  * @author planb
  */
+
+//CardFactory creates and returns new cards to the caller with the type cardType
 public class CardFactory extends AbstractFactory {
 
     @Override
@@ -44,6 +46,7 @@ public class CardFactory extends AbstractFactory {
 }
 
     @Override
+    //Stub
     MonsterPlayer getPlayer(String Player) {
         return null;
     }

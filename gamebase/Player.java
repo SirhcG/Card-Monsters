@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 import tyrantunleashed.TyrantMove;
 
+
+//player superclass for both games
 public abstract class Player implements Serializable{
 
 	public enum StrategyType{
@@ -97,4 +99,11 @@ public abstract class Player implements Serializable{
     }
     
     public abstract void showInfo(); //abstract method
+
+
+
+	public int getCardInField(){
+        
+    	return Field.size();
+    }
 }

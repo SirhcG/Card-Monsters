@@ -11,6 +11,7 @@ import tyrantunleashed.*;
  *
  * @author planb
  */
+
 abstract class Strategy {
     
     protected MonsterPlayer p, o;

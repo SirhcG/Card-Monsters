@@ -9,6 +9,7 @@ package cardmonsters;
  *
  * @author planb
  */
+
 public class MonsterBattle extends MonsterDuel {
     
      public MonsterBattle(MonsterPlayer one, MonsterPlayer two) {

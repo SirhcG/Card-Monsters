@@ -12,6 +12,8 @@ import gamebase.Player.StrategyType;
  *
  * @author planb
  */
+
+//creates players for opponent and the user
 public class PlayerFactory extends AbstractFactory{
 
    

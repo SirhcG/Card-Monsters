@@ -8,12 +8,15 @@ package cardmonsters;
 import java.util.Scanner;
 
 import gamebase.CardBase;
+import gamebase.CardSkill;
 import tyrantunleashed.*;
 
 /**
  *
  * @author planb
  */
+
+//a card that heals another card
 public class Heal  extends CardBase implements CardSkill {
     
     private int healAmount;
@@ -24,6 +27,7 @@ public class Heal  extends CardBase implements CardSkill {
         
     }
     
+    //heal another card
     public void ability(MonsterPlayer p, MonsterPlayer o){
         System.out.println("Please choose a monster to heal");
         Scanner in = new Scanner(System.in);
@@ -35,6 +39,7 @@ public class Heal  extends CardBase implements CardSkill {
         
     }
 
+    //notification
     @Override
     public void checkSkill() {
         System.out.println("Equip card heals a monster by 20hp points!!");

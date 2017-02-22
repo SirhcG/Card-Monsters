@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tyrantunleashed;
+package gamebase;
+
 
 /**
  *
@@ -12,6 +13,6 @@ package tyrantunleashed;
 public interface CardSkill {
     
     public void checkSkill();
-    public void ability(TyrantPlayer p, TyrantPlayer o);
+    public void ability(Player p, Player o);
     
 }

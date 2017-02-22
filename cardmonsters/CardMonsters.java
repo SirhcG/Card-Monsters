@@ -14,22 +14,25 @@ import java.util.ArrayList;
  *
  * @author planb
  */
+
+//sets up and starts the cardmonsters game
 public class CardMonsters {
     
-	AbstractFactory cardFactory;
-	AbstractFactory playerFactory;
+		AbstractFactory cardFactory;
+		AbstractFactory playerFactory;
         MonsterPlayer copy;
-	MonsterPlayer first;
-	MonsterPlayer second;
+        MonsterPlayer first;
+        MonsterPlayer second;
         MonsterPlayer third;
         CampaignBattle battle;
 	
      public CardMonsters() {
          
+    	 //factories
          cardFactory = FactoryProducer.getFactory("card");
          playerFactory = FactoryProducer.getFactory("player");
          
-         
+         //creating the cards
          CardBase one = cardFactory.getCard("melee");
          CardBase two = cardFactory.getCard("melee");
          CardBase three = cardFactory.getCard("melee");
@@ -51,7 +54,7 @@ public class CardMonsters {
          opp.add(third);
          
         
-         
+         //putting the cards into the hand ArrayList
          ArrayList<CardBase> val = new ArrayList<>();
          val.add((CardBase) one);
          val.add((CardBase) two);
@@ -67,17 +70,16 @@ public class CardMonsters {
          val3.add((CardBase) eight);
          val3.add((CardBase) nine);
          
-         
+         //attaches the hand to the player
          first.setCards(val);
          second.setCards(val2);
          third.setCards(val3);
          battle = new CampaignBattle(first, opp);
-         
-         //System.out.println(first.getHand());  
-        // System.out.println(second.getHand());
+
          
         }
      
+     //starts the cardmonsters game
      public void go(){
          battle.begin();
      }

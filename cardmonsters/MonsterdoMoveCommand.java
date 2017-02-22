@@ -14,6 +14,8 @@ import java.io.Serializable;
  *
  * @author planb
  */
+
+
 public class MonsterdoMoveCommand implements MonsterCommand, Serializable {
     
         private static final long serialVersionUID = 8330375274075464923L;

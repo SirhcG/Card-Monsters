@@ -16,6 +16,8 @@ import java.util.Scanner;
  *
  * @author planb
  */
+
+//the superclass that handles battle logic for cardmonsters
 public abstract class MonsterDuel {
     
     private ArrayList<MonsterPlayer> players;

@@ -12,12 +12,15 @@ import gamebase.Player;
  *
  * @author planb
  */
+
+//a defensive strategy for cardmonsters, plays the biggest defensive card in hand
 public class DefensiveMonsterStrategy extends Strategy {
     
     public DefensiveMonsterStrategy(Player _p){
 		super(_p);
 	}
 
+    //returns a MonsterMove object that indicates the handIndex of the card being played
 	@Override
 	public MonsterMove nextMove() { //returns a move object with the handindex for the card to be played onto the field from the hand
 		

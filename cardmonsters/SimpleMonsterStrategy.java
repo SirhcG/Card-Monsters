@@ -13,6 +13,7 @@ import java.io.Serializable;
  *
  * @author planb
  */
+
 public class SimpleMonsterStrategy extends Strategy implements Serializable {
     
     private static final long serialVersionUID = 5650428219175090991L;

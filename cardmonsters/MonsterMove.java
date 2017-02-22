@@ -10,6 +10,8 @@ import java.io.Serializable;
  *
  * @author planb
  */
+
+//holds a move for cardmonsters
 public class MonsterMove extends Move implements Serializable{
     
         private static final long serialVersionUID = 905385761837857889L;

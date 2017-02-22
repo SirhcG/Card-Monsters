@@ -6,6 +6,9 @@
 package cardmonsters;
 
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
+
 import java.io.Serializable;
 
 
@@ -13,6 +16,8 @@ import java.io.Serializable;
  *
  * @author planb
  */
+
+//a standard melee card, attacks whats in front of it
 public class Melee extends CardBase implements CardSkill, Serializable {
     
     private static final long serialVersionUID = -751192004804111646L;
@@ -32,7 +37,7 @@ public class Melee extends CardBase implements CardSkill, Serializable {
     }
 
     @Override
-    public void ability(MonsterPlayer p, MonsterPlayer o) {
+    public void ability(Player p, Player o) {
         System.out.println("This card has no skill");
     }
 }

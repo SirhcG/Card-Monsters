@@ -6,6 +6,8 @@
 package tyrantunleashed;
 
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
 
 /**
  *
@@ -21,7 +23,7 @@ public class ArmorBoost extends CardBase implements CardSkill {
     }
     
      @Override
-    public void ability(TyrantPlayer p, TyrantPlayer o) {
+    public void ability(Player p, Player o) {
         int temp = this.getHealth();
         temp = temp + 15;
         this.setHealth(temp);

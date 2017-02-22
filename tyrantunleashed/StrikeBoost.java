@@ -6,6 +6,8 @@
 package tyrantunleashed;
 
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
 
 /**
  *
@@ -22,14 +24,14 @@ public class StrikeBoost extends CardBase implements CardSkill {
     }
     
      @Override
-    public void ability(TyrantPlayer p, TyrantPlayer o) {
-        TyrantPlayer one = p;
-        TyrantPlayer two = o;
+    public void ability(Player p, Player o) {
+        Player one = p;
+        Player two = o;
         
-        int val = o.getCardInField();
+        int val = ((TyrantPlayer) o).getCardInField();
         if(val == 0){
-           int temp = o.getHealth() - baseStrike;
-           o.setHealth(temp);
+           int temp = ((TyrantPlayer) o).getHealth() - baseStrike;
+           ((TyrantPlayer) o).setHealth(temp);
         }
         else if(val == 1){
             int temp = o.getCard(val).getHealth();

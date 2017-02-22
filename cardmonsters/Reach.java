@@ -5,12 +5,17 @@
  */
 package cardmonsters;
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
+
 import java.io.Serializable;
 import tyrantunleashed.*;
 /**
  *
  * @author planb
  */
+
+//reach card type
 public class Reach extends CardBase implements CardSkill, Serializable {
     
     private int attack;
@@ -24,8 +29,10 @@ public class Reach extends CardBase implements CardSkill, Serializable {
         super(null, 0, 0);
     }
     
+    
+    //can attack cards anywhere 
     @Override
-    public void ability(MonsterPlayer p, MonsterPlayer o){
+    public void ability(Player p, Player o){
     
         int val = o.getCardInField();
        

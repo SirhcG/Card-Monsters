@@ -11,6 +11,8 @@ import tyrantunleashed.*;
  *
  * @author planb
  */
+
+//superclass for monter strategy
 abstract class MonsterStrategy {
     
     protected MonsterPlayer p, o;

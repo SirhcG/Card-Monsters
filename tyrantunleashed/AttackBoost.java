@@ -6,6 +6,8 @@
 package tyrantunleashed;
 
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
 
 /**
  *
@@ -18,7 +20,7 @@ public class AttackBoost extends CardBase implements CardSkill{
     }
     
     @Override
-    public void ability(TyrantPlayer p, TyrantPlayer o){
+    public void ability(Player p, Player o){
        this.setDamage(0);
        int temp = this.getAttack();
        temp = temp + 15;

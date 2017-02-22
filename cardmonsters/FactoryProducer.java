@@ -9,6 +9,8 @@ package cardmonsters;
  *
  * @author planb
  */
+
+//makes factories
 public class FactoryProducer {
     
     public static AbstractFactory getFactory(String choice){

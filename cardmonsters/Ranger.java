@@ -6,6 +6,9 @@
 package cardmonsters;
 
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
+
 import java.io.Serializable;
 import tyrantunleashed.*;
 
@@ -13,6 +16,8 @@ import tyrantunleashed.*;
  *
  * @author planb
  */
+
+//handles the ranger type card
 public class Ranger extends CardBase implements CardSkill, Serializable {
     
     private int Attack;
@@ -27,7 +32,8 @@ public class Ranger extends CardBase implements CardSkill, Serializable {
     }
     
     @Override
-    public void ability(MonsterPlayer p, MonsterPlayer o){
+    //can attack cards not in front of it
+    public void ability(Player p, Player o){
         
        int val = o.getCardInField();
        

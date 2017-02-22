@@ -11,6 +11,8 @@ import java.io.Serializable;
  *
  * @author planb
  */
+
+//superclass that handles cardtypes from both games
 public class CardBase implements Serializable {
     
 	private String name;

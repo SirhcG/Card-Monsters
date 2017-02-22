@@ -23,6 +23,8 @@ import java.util.Scanner;
  *
  * @author planb
  */
+
+//class that handles the campaign mode in cardmonsters
 public abstract class MonsterCampaign implements Serializable {
    
     private static final long serialVersionUID = -1789160225751330715L;
@@ -32,6 +34,7 @@ public abstract class MonsterCampaign implements Serializable {
     MonsterdoMoveCommand mCommand;
     int dmg = 0, health = 0, val = 0, turn = 1, oppCount = 1, size = 0, count = 0;
     
+    //constructor, makes array of opponents
     public MonsterCampaign(MonsterPlayer main, ArrayList<MonsterPlayer> array){
         opponents = new ArrayList<>();
         opponents = array;
@@ -40,13 +43,15 @@ public abstract class MonsterCampaign implements Serializable {
         for(int i=0; i<opponents.size(); i++){
           clones.add(deepClone(main));
         }
-        }
+    }
     
+    //start campaign
     public void begin(){
         
         Scanner val = new Scanner(System.in);
         int input = 0;
         
+        		//handling the save feature
                 while(true){
                 System.out.println("Do you have a perviously saved game?? [Y/N] \n");
                 Scanner choice = new Scanner(System.in);
@@ -229,17 +234,16 @@ public abstract class MonsterCampaign implements Serializable {
        }
    }
    
+   //updates opponent array between games?
    private void update(){
       
        clones.remove(0);
        clones.trimToSize();
        opponents.remove(0);
-       opponents.trimToSize();
-       
-       
-               
+       opponents.trimToSize();          
    }
 
+   //all this does is pause the game and let you read the output
    private void stop(){
 	   try {
 			System.in.read();

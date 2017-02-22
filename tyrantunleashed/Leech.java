@@ -6,6 +6,8 @@
 package tyrantunleashed;
 
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
 
 /**
  *
@@ -26,7 +28,7 @@ public class Leech extends CardBase implements CardSkill{
     }
 	
 	@Override
-	public void ability(TyrantPlayer p, TyrantPlayer o) { //ability triggers before card attacks
+	public void ability(Player p, Player o) { //ability triggers before card attacks
 		int temp = getHealth();
 		
 		if(leech > getAttack())

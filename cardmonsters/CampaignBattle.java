@@ -11,8 +11,11 @@ import java.util.ArrayList;
  *
  * @author planb
  */
+
+//A subclass of MonsterCampaign
 public class CampaignBattle extends MonsterCampaign {
     
+	//constructor
     public CampaignBattle(MonsterPlayer main, ArrayList<MonsterPlayer> array){
         super(main, array);
     }

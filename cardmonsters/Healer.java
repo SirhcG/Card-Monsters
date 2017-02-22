@@ -5,12 +5,16 @@
  */
 package cardmonsters;
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
 import tyrantunleashed.*;
 
 /**
  *
  * @author planb
  */
+
+//a card that heals another unit on the field
 public class Healer extends CardBase implements CardSkill {
     
     private int Heal;
@@ -20,8 +24,9 @@ public class Healer extends CardBase implements CardSkill {
         this.Heal = 10;
     }
     
+    //heal another card
     @Override
-    public void ability(MonsterPlayer p, MonsterPlayer o){
+    public void ability(Player p, Player o){
         int val = p.getCardInField();
         if(val >= 1){
            int health = p.getCard(0).getHealth();
@@ -32,6 +37,7 @@ public class Healer extends CardBase implements CardSkill {
         checkSkill();
     }
 
+    //notifcation
     @Override
     public void checkSkill() {
         System.out.println("This card will heal any monster in the main field");

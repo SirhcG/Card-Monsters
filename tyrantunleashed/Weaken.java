@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import gamebase.CardBase;
+import gamebase.CardSkill;
+import gamebase.Player;
 
 public class Weaken extends CardBase implements CardSkill{
 
@@ -20,7 +22,7 @@ public class Weaken extends CardBase implements CardSkill{
     }
 	
 	@Override
-	public void ability(TyrantPlayer p, TyrantPlayer o) { //ability triggers before card attacks
+	public void ability(Player p, Player o) { //ability triggers before card attacks
 		ArrayList<CardBase> oppField = o.getField();
 		int fieldSize = o.getField().size();	//size of opponent's field
 		

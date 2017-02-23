@@ -55,7 +55,11 @@ public abstract class MonsterCampaign implements Serializable {
                 while(true){
                 System.out.println("Do you have a perviously saved game?? [Y/N] \n");
                 Scanner choice = new Scanner(System.in);
-                char s = choice.findInLine(".").charAt(0);
+                char s = choice.next().charAt(0);
+                System.out.println(s);
+                if(Character.isWhitespace(s)){
+                    continue;
+                }
                 if(s == 'Y'  || s == 'y'){
                     read();
                     break;
@@ -181,6 +185,7 @@ public abstract class MonsterCampaign implements Serializable {
                    ++count;
                    turn = 1;
                    //begin();
+                   
                    if(size == count){
                        System.out.println("Out of Opponents Game Over!!\n");
                        System.exit(0);
@@ -226,6 +231,7 @@ public abstract class MonsterCampaign implements Serializable {
        opponents = resume.opponents;
        clones = resume.clones;
        oppCount = resume.oppCount;
+       count = resume.count;
        }catch(Exception e){
            System.out.println(e);
            System.out.println("\nYou do not have a perviously saved game please restart the game!!");
